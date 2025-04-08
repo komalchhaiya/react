@@ -1,0 +1,184 @@
+
+Q1: What is React.js? How is it different?
+React.js is a JavaScript library for building interactive user interfaces, especially for single-page applications .  
+
+What makes it different:
+- It focuses only on the view layer, unlike full frameworks like Angular.
+- Uses JSX (HTML-like syntax in JavaScript).
+- Built around components, making the UI modular and reusable.
+- Uses a virtual DOM to optimize rendering.
+- Supports one-way data flow, making data handling predictable.
+
+
+
+ Q2: Core Principles of React
+- Virtual DOM: A lightweight  of the real DOM. React updates only the parts that change, which makes rendering fast.
+- Component-Based Architecture: UIs are built from small, reusable components that manage their own state and logic. This makes development organized and scalable.
+
+
+
+ Q3: Advantages of React.js
+- Reusable Components: Build once, reuse anywhere in the app.
+- Fast Performance: Virtual DOM makes updates efficient.
+- Easy Debugging: Clear, declarative code structure.
+- Strong Community: Tons of tools, libraries, and support.
+- SEO-Friendly: With server-side rendering tools like Next.js.
+- Easy to Learn: Great for JavaScript developers getting into frontend.
+
+
+JSX:
+
+ Q1: What is JSX in React.js? Why is it used?  
+JSX (JavaScript XML) is a syntax extension that lets you write HTML-like code inside JavaScript.  
+It is used in React to describe the UI in a readable and declarative way.
+Example:
+const element = <h1>Hello, world!</h1>;
+
+
+
+ Q2: How is JSX different from regular JavaScript? Can you write JavaScript inside JSX?  
+- JSX looks like HTML, but it’s actually syntactic sugar for `React.createElement()` calls.
+- You can write JavaScript inside JSX using curly braces `{}`.
+
+Example:
+const name = "Alex";
+const element = <h2>Hello, {name}!</h2>;
+
+
+
+ Q3: Importance of Curly Braces `{}` in JSX
+- Curly braces `{}` are used to embed JavaScript expressions inside JSX.
+- You can use variables, functions, conditionals, or any valid expression inside `{}`.
+
+Example:
+const num = 5;
+const element = <p>{num * 2}</p>;  // Outputs: 10
+
+
+
+Components (Functional & Class Components):
+
+Q1: What are components in React? What’s the difference between functional and class components?
+Components are the building blocks of a React app. They represent parts of the UI like buttons, forms, or pages.
+
+Two types of components:
+Functional Components (modern & preferred):
+
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+Class Components (older way):
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+}
+Difference:
+
+Functional Component	Class Component
+Uses functions	        Uses classes
+Uses hooks for state	Uses this.state
+Easier and cleaner	    More complex syntax
+No render() needed	    Requires render() method
+
+
+
+Q2: How do you pass data to a component using props?
+You pass data to a component by adding props (short for properties) like HTML attributes.
+
+Example:
+function Greeting(props) {
+  return <h2>Hello, {props.name}!</h2>;
+}
+
+<Greeting name="Komal" />
+
+Q3: What is the role of render() in class components?
+In class components, the render() method:
+
+Returns the JSX that defines what should be displayed on the screen
+
+Example:
+class Hello extends React.Component {
+  render() {
+    return <p>Hi there!</p>;
+  }
+}
+In functional components, you don't need render()—you just return the JSX directly
+
+
+
+Props and State:
+
+ Q1: What are props in React.js? How are props different from state?
+
+Props (short for “properties”) are used to pass data from one component to another, usually from parent to child.
+
+Example:
+
+<Greeting name="Komal" />
+
+
+In the `Greeting` component:
+
+function Greeting(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+
+# Difference between Props and State:
+
+| Props                      | State                          |
+| Passed from parent         | Managed inside the component   |
+| Read-only                  | Can be changed             |
+| Used to configure a 
+component                    | Used to control behavior/data |
+
+
+
+ Q2: What is State in React and how is it used?
+
+State is a built-in object used to store dynamic data in a component.  
+It allows components to react and re-render when data changes.
+
+# In functional components (using hooks):
+
+import { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      Count: {count}
+    </button>
+  );
+}
+
+
+
+
+ Q3: Why is `this.setState()` used in class components, and how does it work?
+
+In class components, you use `this.setState()` to update the state.
+
+- It updates the state asynchronously
+- It triggers a re-render of the component with the new data
+
+Example:
+
+class Counter extends React.Component {
+  constructor() {
+    super();
+    this.state = { count: 0 };
+  }
+
+  increment = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  render() {
+    return <button onClick={this.increment}>Count: {this.state.count}</button>;
+  }
+}
+
+
