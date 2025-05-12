@@ -1,0 +1,41 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "komal Chhaiya",
+      "email": "komal@gmail.com",
+      "password": "komal123"
+    },
+    {
+      "id": 2,
+      "name": "Nisha Dangar",
+      "email": "N@gmail.com",
+      "password": "Nisha123"
+    },
+    {
+      "name": "komal chhaiya",
+      "email": "komal@gmail.com",
+      "id": "08ea"
+    },
+    {
+      "id": "f8c0",
+      "name": "komal chhaiya",
+      "email": "komalchhaiya1925@gmail.com"
+    },
+    {
+      "id": "afe2",
+      "name": "tarun chhaiya",
+      "email": "tt@gmail.com"
+    },
+    {
+      "id": "bf86",
+      "name": "komal chhaiya",
+      "email": "komalchhaiya1925@gmail.com"
+    },
+    {
+      "id": "b5cb",
+      "name": "komal chhaiya",
+      "email": "komalchhaiya1925@gmail.com"
+    }
+  ]
+}
